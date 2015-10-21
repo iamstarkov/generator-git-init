@@ -5,7 +5,7 @@ module.exports = generators.Base.extend({
   constructor: function () {
     generators.Base.apply(this, arguments);
   },
-  end: function () {
+  writing: function () {
     this.spawnCommandSync('git', ['init']);
   }
 });

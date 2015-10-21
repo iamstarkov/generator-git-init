@@ -18,7 +18,10 @@
     "generators"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "git",
+    "init",
+    "git-init"
   ],
   "dependencies": {
     "yeoman-generator": "^0.20.3"

@@ -31,7 +31,7 @@ Just plug in _git-init_ into your generator and let it initialize git for you. E
 #### Compose
 
 ```js
-this.composeWith('travis', {}, {
+this.composeWith('git-init', {}, {
   local: require.resolve('generator-git-init/generators/app')
 });
 ```

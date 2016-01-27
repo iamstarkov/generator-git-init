@@ -3,7 +3,7 @@
 var path = require('path');
 var fs = require('fs');
 var assert = require('yeoman-generator').assert;
-var helpers = require('yeoman-generator').test
+var helpers = require('yeoman-generator').test;
 var spawnSync = require('child_process').spawnSync;
 
 
@@ -12,10 +12,9 @@ function makeGenerator() {
     .withOptions({ skipInstall: true });
 }
 
-function addFile(dir) {
-  var done = this.async();
-  var fileName = path.join(dir, 'index.html')
-  fs.writeFile(fileName, "", done);
+function addFile(dir, done) {
+  var fileName = path.join(dir, 'index.html');
+  fs.writeFile(fileName, '', done);
 }
 
 function exec(command, args) {
@@ -28,8 +27,8 @@ describe('git-init:app', function () {
   it('should initialize git repository', function (done) {
     makeGenerator().on('end', function () {
       assert.file('.git');
-      done()
-    })
+      done();
+    });
   });
 
   it('should do initial commit if option  --commit was set', function (done) {
@@ -38,8 +37,8 @@ describe('git-init:app', function () {
     .withOptions({commit: true})
     .on('end', function () {
       var execResult = exec('git', 'log --pretty=oneline');
-      assert(execResult.match(/Init commit/))
-      done()
+      assert(execResult.match(/Init commit/));
+      done();
     });
   });
 
@@ -49,8 +48,8 @@ describe('git-init:app', function () {
     .withOptions({commit: 'Great commit for project init'})
     .on('end', function () {
       var execResult = exec('git', 'log --pretty=oneline');
-      assert(execResult.match(/Great commit for project init/))
-      done()
+      assert(execResult.match(/Great commit for project init/));
+      done();
     });
   });
 });

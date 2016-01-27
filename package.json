@@ -11,8 +11,9 @@
     "url": "https://github.com/iamstarkov"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "npm run lint && mocha",
     "tdd": "npm test -- --watch",
+    "lint": "jshint -c .jshintrc ./generators ./test",
     "postpublish": "git push --follow-tags"
   },
   "files": [
@@ -29,6 +30,7 @@
     "yeoman-generator": "^0.21.1"
   },
   "devDependencies": {
+    "jshint": "*",
     "mocha": "*"
   }
 }

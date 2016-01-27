@@ -16,9 +16,9 @@ module.exports = generators.Base.extend({
   },
 
   _addCommit: function () {
-    var commitMessage = isString(this.options.commit)
-      ? this.options.commit
-      : 'Init commit';
+    var commitMessage = isString(this.options.commit)?
+      this.options.commit :
+      'Init commit';
     this.spawnCommandSync('git', ['add', '--all']);
     this.spawnCommandSync('git', ['commit', '-m', '"'+ commitMessage +'"']);
   }

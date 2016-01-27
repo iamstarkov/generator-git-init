@@ -11,8 +11,8 @@
     "url": "https://github.com/iamstarkov"
   },
   "scripts": {
-    "test": "npm run lint && mocha",
-    "tdd": "npm test -- --watch",
+    "test": "npm run lint & mocha",
+    "tdd": "npm run test -- --watch",
     "lint": "jshint -c .jshintrc ./generators ./test",
     "postpublish": "git push --follow-tags"
   },

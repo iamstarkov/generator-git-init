@@ -12,16 +12,20 @@ function makeGenerator() {
     .withOptions({ skipInstall: true });
 }
 
-function addFile(dir, done) {
-  var fileName = path.join(dir, 'index.html');
-  fs.writeFile(fileName, '', done);
-}
-
 function exec(command, args) {
   args = args.split(' ');
   var execResult = spawnSync(command, args);
+  console.log(execResult.stdout.toString());
   return execResult.stdout.toString();
 }
+
+function setupGit(dir, done) {
+  var fileName = path.join(dir, 'index.html');
+  fs.writeFile(fileName, '', done);
+  exec('git', 'config user.email "you@example.com"');
+  exec('git', 'config user.name "Your Name"');
+}
+
 
 describe('git-init:app', function () {
   it('should initialize git repository', function (done) {
@@ -33,7 +37,7 @@ describe('git-init:app', function () {
 
   it('should do initial commit if option  --commit was set', function (done) {
     makeGenerator()
-    .inTmpDir(addFile)
+    .inTmpDir(setupGit)
     .withOptions({commit: true})
     .on('end', function () {
       var execResult = exec('git', 'log --pretty=oneline');
@@ -44,7 +48,7 @@ describe('git-init:app', function () {
 
   it('should take custom commit message', function (done) {
     makeGenerator()
-    .inTmpDir(addFile)
+    .inTmpDir(setupGit)
     .withOptions({commit: 'Great commit for project init'})
     .on('end', function () {
       var execResult = exec('git', 'log --pretty=oneline');

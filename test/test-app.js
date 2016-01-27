@@ -4,7 +4,7 @@ var path = require('path');
 var fs = require('fs');
 var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
-var spawnSync = require('child_process').spawnSync;
+var spawnSync = require('spawn-sync');
 
 
 function makeGenerator() {

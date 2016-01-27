@@ -25,6 +25,7 @@
     "git-init"
   ],
   "dependencies": {
+    "lodash.isstring": "^4.0.0",
     "yeoman-generator": "^0.21.1"
   },
   "devDependencies": {

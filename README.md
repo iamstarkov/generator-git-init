@@ -13,9 +13,20 @@
 
     npm install --global yo generator-git-init
 
+
 ## Usage
 
+Basic usage
+
     yo git-init
+
+Use initial commit option to create commit with generator.
+
+    yo git-init --commit
+
+You can pass custom initial commit message
+
+    yo git-init --commit='Awesome project start'
 
 ## Composability
 

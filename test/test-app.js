@@ -37,23 +37,23 @@ describe('git-init:app', function () {
 
   it('should do initial commit if option  --commit was set', function (done) {
     makeGenerator()
-    .inTmpDir(setupGit)
-    .withOptions({commit: true})
-    .on('end', function () {
-      var execResult = exec('git', 'log --pretty=oneline');
-      assert(execResult.match(/init/));
-      done();
-    });
+      .inTmpDir(setupGit)
+      .withOptions({ commit: true })
+      .on('end', function () {
+        var execResult = exec('git', 'log --pretty=oneline');
+        assert(execResult.match(/init/));
+        done();
+      });
   });
 
   it('should take custom commit message', function (done) {
     makeGenerator()
-    .inTmpDir(setupGit)
-    .withOptions({commit: 'Great commit for project init'})
-    .on('end', function () {
-      var execResult = exec('git', 'log --pretty=oneline');
-      assert(execResult.match(/Great commit for project init/));
-      done();
-    });
+      .inTmpDir(setupGit)
+      .withOptions({ commit: 'Great commit for project init' })
+      .on('end', function () {
+        var execResult = exec('git', 'log --pretty=oneline');
+        assert(execResult.match(/Great commit for project init/));
+        done();
+      });
   });
 });

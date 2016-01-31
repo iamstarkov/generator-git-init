@@ -9,14 +9,12 @@ module.exports = generators.Base.extend({
       desc: 'Commit message, optional',
     });
   },
-
   install: function () {
-    this.spawnCommandSync('git', ['init']);
+    this.spawnCommandSync('git', ['init', '--quiet']);
     if (this.options.commit) {
       this._addCommit();
     }
   },
-
   _addCommit: function () {
     var commitMessage = isString(this.options.commit) ? this.options.commit : 'init';
     this.spawnCommandSync('git', ['add', '--all']);

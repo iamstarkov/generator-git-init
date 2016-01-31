@@ -1,7 +1,7 @@
 {
   "name": "generator-git-init",
   "version": "1.0.4",
-  "description": "Yeoman generator for simply `git init`",
+  "description": "Yeoman generator for simply `git init` and optional `init` commit",
   "license": "MIT",
   "main": "generators/app/index.js",
   "repository": "iamstarkov/generator-git-init",

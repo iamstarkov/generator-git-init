@@ -4,7 +4,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][depstat-image]][depstat-url]
 
-> [Yeoman][yo] generator for simply `git init`.  
+> [Yeoman][yo] generator for simply `git init` and optional `init` commit.  
 > [Works great with other generators too](#composability).
 
 [yo]: http://yeoman.io/

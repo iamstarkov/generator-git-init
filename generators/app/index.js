@@ -5,7 +5,9 @@ var isString = require('lodash.isstring');
 module.exports = generators.Base.extend({
   constructor: function () {
     generators.Base.apply(this, arguments);
-    this.option('commit');
+    this.option('commit', { type: String, required: false, alias: 'c',
+      desc: 'Commit message, optionable',
+    });
   },
 
   install: function () {

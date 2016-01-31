@@ -13,19 +13,15 @@
 
     npm install --global yo generator-git-init
 
-
 ## Usage
-
-Basic usage
 
     yo git-init
 
-Use initial commit option to create commit with generator.
-
+    # standard `init` commit message
+    yo git-init -c
     yo git-init --commit
 
-You can pass custom initial commit message
-
+    # custom `init` commit message
     yo git-init --commit='Awesome project start'
 
 ## Composability
@@ -43,7 +39,17 @@ Just plug in _git-init_ into your generator and let it initialize git for you. E
 
 ```js
 this.composeWith('git-init', {}, {
-  local: require.resolve('generator-git-init/generators/app')
+  local: require.resolve('generator-git-init')
+});
+```
+
+Or with custom initial commit message:
+
+```js
+this.composeWith('git-init', {
+  options: { commit: 'your awesome project' }
+}, {
+  local: require.resolve('generator-git-init')
 });
 ```
 

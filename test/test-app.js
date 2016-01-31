@@ -15,7 +15,6 @@ function makeGenerator() {
 function exec(command, args) {
   args = args.split(' ');
   var execResult = spawnSync(command, args);
-  console.log(execResult.stdout.toString());
   return execResult.stdout.toString();
 }
 

@@ -41,7 +41,7 @@ describe('git-init:app', function () {
     .withOptions({commit: true})
     .on('end', function () {
       var execResult = exec('git', 'log --pretty=oneline');
-      assert(execResult.match(/Init commit/));
+      assert(execResult.match(/init/));
       done();
     });
   });

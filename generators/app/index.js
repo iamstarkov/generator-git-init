@@ -6,7 +6,7 @@ module.exports = generators.Base.extend({
   constructor: function () {
     generators.Base.apply(this, arguments);
     this.option('commit', { type: String, required: false, alias: 'c',
-      desc: 'Commit message, optionable',
+      desc: 'Commit message, optional',
     });
   },
 

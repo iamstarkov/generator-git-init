@@ -12,7 +12,7 @@ module.exports = generators.Base.extend({
   initializing: function () {
     this.spawnCommandSync('git', ['init', '--quiet']);
   },
-  install: function () {
+  end: function () {
     if (this.options.commit) {
       this._addCommit();
     }

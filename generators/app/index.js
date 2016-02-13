@@ -14,11 +14,11 @@ module.exports = generators.Base.extend({
   },
   end: function () {
     if (this.options.commit) {
-      this._addCommit();
+      this._addCommit(this.options.commit);
     }
   },
-  _addCommit: function () {
-    var commitMessage = isString(this.options.commit) ? this.options.commit : 'init';
+  _addCommit: function (message) {
+    var commitMessage = isString(message) ? message : 'init';
     this.spawnCommandSync('git', ['add', '--all']);
     this.spawnCommandSync('git', ['commit', '-m', commitMessage, '--quiet']);
   }

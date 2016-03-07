@@ -53,6 +53,14 @@ this.composeWith('git-init', {
 });
 ```
 
+Add this lines to your `.travis.yml` to calm down your Travis builds:
+
+```yml
+before_script:
+  - 'git config --global user.email "you@example.com"'
+  - 'git config --global user.name "Your Name"'
+```
+
 [voltron]: http://25.media.tumblr.com/tumblr_m1zllfCJV21r8gq9go11_250.gif
 
 

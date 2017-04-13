@@ -26,12 +26,12 @@
   ],
   "dependencies": {
     "lodash.isstring": "^4.0.0",
-    "yeoman-generator": "^0.22.5"
+    "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
-    "mocha": "^2.4.5",
+    "mocha": "^3.2.0",
     "spawn-sync": "^1.0.15",
-    "yeoman-assert": "^2.1.1",
+    "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.0.0"
   }
 }

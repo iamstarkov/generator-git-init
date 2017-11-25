@@ -38,18 +38,14 @@ Just plug in _git-init_ into your generator and let it initialize git for you. E
 #### Compose
 
 ```js
-this.composeWith('git-init', {}, {
-  local: require.resolve('generator-git-init')
-});
+this.composeWith(require.resolve('generator-git-init'));
 ```
 
 Or with custom initial commit message:
 
 ```js
-this.composeWith('git-init', {
-  options: { commit: 'your awesome project' }
-}, {
-  local: require.resolve('generator-git-init')
+this.composeWith(require.resolve('generator-git-init'), {
+  commit: 'your awesome project',
 });
 ```
 

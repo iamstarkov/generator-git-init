@@ -20,7 +20,7 @@ function exec(command, args) {
 
 function addFile(dir, done) {
   var fileName = path.join(dir, 'index.html');
-  fs.writeFile(fileName, '', done);
+  fs.writeFileSync(fileName, '');
 }
 
 
@@ -30,17 +30,6 @@ describe('git-init:app', function () {
       assert.file('.git');
       done();
     });
-  });
-
-  it('should do initial commit if option  --commit was set', function (done) {
-    makeGenerator()
-      .inTmpDir(addFile)
-      .withOptions({ commit: true })
-      .on('end', function () {
-        var execResult = exec('git', 'log --pretty=oneline');
-        assert(execResult.match(/init/));
-        done();
-      });
   });
 
   it('should take custom commit message', function (done) {
